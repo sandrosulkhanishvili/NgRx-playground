@@ -1,11 +1,17 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { MyCounter } from './my-counter/my-counter';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [MyCounter],
+  standalone: true,
+  template: `
+    <h1>NgRx Tutorial</h1>
+
+    <!-- 👇 add the counter component -->
+    <ngrx-my-counter></ngrx-my-counter>
+  `,
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('NgRx-playground');
